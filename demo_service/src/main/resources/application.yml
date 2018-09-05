@@ -7,7 +7,7 @@ spring:
   application:
     name: demo_service
 mybatis:
-  mapper-locations: classpath*:dao/mapper/*.xml
+  mapper-locations: classpath:com/sensetime/demo_service/dao/mapper/*.xml
   type-aliases-package: entity
 server:
   port: 8888

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sensetime.demo_service.dao.ITopicDao">
+    <resultMap id="BaseMap" type="topic">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="user_id" property="userId"/>
+        <result column="time" property="time"/>
+        <result column="status" property="status"/>
+        <result column="author_name" property="authorName"/>
+    </resultMap>
+    <sql id="all">
+        id,title,content,user_id,time,status,name as author_name
+    </sql>
+    <insert id="addTopic" parameterType="topic">
+        insert into t_topic value(null,#{title},#{content},#{userId},#{time},1)
+    </insert>
+    <select id="queryById" resultMap="BaseMap">
+        SELECT <include refid="all"/> from t_topic t join t_user u on t.user_id = u.id where id = #{id} and status = 1
+    </select>
+    <select id="queryAll" resultMap="BaseMap">
+        select <include refid="all"/> from t_topic t join t_user u on t.user_id = u.id where status = 1
+    </select>
+</mapper>

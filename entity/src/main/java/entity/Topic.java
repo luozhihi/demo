@@ -1,14 +1,26 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Topic {
+public class Topic implements Serializable{
     private Integer id;
     private String title;
     private String content;
     private Integer userId;
     private Date time;
     private Integer status;
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    private String authorName;
+
 
     public Integer getId() {
         return id;
@@ -58,6 +70,7 @@ public class Topic {
         this.status = status;
     }
 
+
     @Override
     public String toString() {
         return "Topic{" +
@@ -67,6 +80,7 @@ public class Topic {
                 ", userId=" + userId +
                 ", time=" + time +
                 ", status=" + status +
+                ", authorName='" + authorName + '\'' +
                 '}';
     }
 }

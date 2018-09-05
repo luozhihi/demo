@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="search" method="post">
+        <input type="text" name="key" th:value="${key}">
+        <input type="submit" value="search">
+    </form>
+    <a th:href="addTopic.html">发帖</a>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>标题</td>
+            <td>作者</td>
+            <td>时间</td>
+        </tr>
+        <tr th:each="topic:${topicList}">
+            <td th:text="${topic.id}">id</td>
+            <td><a th:href="queryTopicById?id=${topic.id}" th:text="${topic.title}"></a>标题</td>
+            <td th:text="${topic.user.name}">作者</td>
+            <td th:text="${#dates.format(topic.time, 'yyyy-MM-dd')}">时间</td>
+        </tr>
+    </table>
+</body>
+</html>

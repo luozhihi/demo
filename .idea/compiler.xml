@@ -21,6 +21,7 @@
       <module name="demo_es" target="1.8" />
       <module name="demo_service" target="1.8" />
       <module name="demo_web" target="1.8" />
+      <module name="demos" target="1.8" />
       <module name="entity" target="1.8" />
     </bytecodeTargetLevel>
   </component>

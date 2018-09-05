@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    标题：<h4 th:text="${topic.title}"></h4>
+    内容：<p th:text="${topic.content}"/>
+    作者：<p th:text="${topic.authorName}"></p>
+    时间：<p th:text="${#dates.format(topic.time, 'yyyy-MM-dd')}"></p>
+</body>
+</html>
