@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    data-password: root
+    data-username: test
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql//lzh1221.cn:3306/senseDemo
+  application:
+    name: demo_service
+mybatis:
+  mapper-locations: classpath*:dao/mapper/*.xml
+  type-aliases-package: entity
+server:
+  port: 8888
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:80/eureka/
+    register-with-eureka: true
+    fetch-registry: true

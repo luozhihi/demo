@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud_server" />
+        <module name="common" />
+        <module name="demo_es" />
+        <module name="demo_service" />
+        <module name="demo_web" />
+        <module name="entity" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud_server" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="demo_es" target="1.8" />
+      <module name="demo_service" target="1.8" />
+      <module name="demo_web" target="1.8" />
+      <module name="entity" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
