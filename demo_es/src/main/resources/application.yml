@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    listener:
+      concurrency: 4
+    producer:
+      batch-size: 1000
+    consumer:
+      group-id: myGroup
+    template:
+      default-topic: topic-1
+server:
+  port: 8181

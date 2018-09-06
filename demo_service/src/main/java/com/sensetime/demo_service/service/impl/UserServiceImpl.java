@@ -2,7 +2,7 @@ package com.sensetime.demo_service.service.impl;
 
 import com.sensetime.demo_service.dao.IUserDao;
 import com.sensetime.demo_service.service.IUserService;
-import entity.User;
+import com.sensetime.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

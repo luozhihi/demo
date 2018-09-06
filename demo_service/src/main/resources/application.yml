@@ -1,14 +1,14 @@
 spring:
   datasource:
-    data-password: root
-    data-username: test
+    username: root
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql//lzh1221.cn:3306/senseDemo
+    url: jdbc:mysql://localhost:3306/senseDemo
   application:
-    name: demo_service
+    name: demo-service
 mybatis:
   mapper-locations: classpath:com/sensetime/demo_service/dao/mapper/*.xml
-  type-aliases-package: entity
+  type-aliases-package: com.sensetime.entity
 server:
   port: 8888
 eureka:
@@ -16,4 +16,4 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:80/eureka/
     register-with-eureka: true
-    fetch-registry: true
+    fetch-registry: false

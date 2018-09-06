@@ -1,6 +1,6 @@
 package com.sensetime.demo_service.dao;
 
-import entity.Topic;
+import com.sensetime.entity.Topic;
 
 import java.util.List;
 

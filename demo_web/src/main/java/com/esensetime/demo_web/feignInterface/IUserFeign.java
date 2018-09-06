@@ -1,15 +1,15 @@
 package com.esensetime.demo_web.feignInterface;
 
-import entity.User;
+import com.sensetime.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "demo_service")
-@RequestMapping("userController/")
+@FeignClient(value = "demo-service",path = "userController")
 public interface IUserFeign {
-    @RequestMapping("register")
+    @RequestMapping(value = "register",method = RequestMethod.POST)
     void register(User user);
 
-    @RequestMapping("login")
+    @RequestMapping(value = "login",method = RequestMethod.POST)
     User login(User user);
 }

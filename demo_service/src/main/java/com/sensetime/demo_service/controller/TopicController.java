@@ -1,32 +1,35 @@
 package com.sensetime.demo_service.controller;
 
 import com.sensetime.demo_service.service.ITopicService;
-import entity.Topic;
+import com.sensetime.entity.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
 
 @RequestMapping("topicController/")
-@Controller
+@RestController
 public class TopicController {
     @Autowired
     private ITopicService topicService;
 
-    @RequestMapping("addTopic")
-    public void addTopic(Topic topic) {
+    @RequestMapping(value = "addTopic",method = RequestMethod.POST)
+    public Topic addTopic(@RequestBody Topic topic) {
         topic.setTime(new Date());
-        topicService.addTopic(topic);
+        return topicService.addTopic(topic);
     }
 
-    @RequestMapping("queryById")
-    public Topic queryById(Integer id){
+    @RequestMapping(value = "queryById",method = RequestMethod.POST)
+    public Topic queryById(@RequestBody Integer id){
+        System.out.println(id);
         return topicService.queryById(id);
     }
 
-    @RequestMapping("queryAll")
+    @RequestMapping(value = "queryAll")
     public List<Topic> queryAll(){
         return topicService.queryAll();
     }
