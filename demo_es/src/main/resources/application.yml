@@ -9,5 +9,13 @@ spring:
       group-id: myGroup
     template:
       default-topic: topic-1
+  application:
+    name: demo-es
 server:
   port: 8181
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:80/eureka/

@@ -16,5 +16,6 @@ public class Consumer {
         ESUtils esUtils = new ESUtils();
         esUtils.add("topic", "topic", topic.getId(), topic);
         esUtils.closeClient();
+        System.out.println("添加到索引库成功");
     }
 }

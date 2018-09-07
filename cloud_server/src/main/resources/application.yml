@@ -6,5 +6,7 @@
    client:
      register-with-eureka: false
      fetch-registry: false
+     eureka-server-connect-timeout-seconds: 30
+     eureka-server-read-timeout-seconds: 30
      service-url:
         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

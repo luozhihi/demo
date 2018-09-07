@@ -33,4 +33,5 @@ public class TopicController {
     public List<Topic> queryAll(){
         return topicService.queryAll();
     }
+
 }

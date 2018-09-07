@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="search" method="post">
+    <form action="/searchTopic" method="post">
         <input type="text" name="key" th:value="${key}">
         <input type="submit" value="search">
     </form>
@@ -21,7 +21,7 @@
             <td th:text="${topic.id}">id</td>
             <td><a th:href="|queryTopicById?id=${topic.id}|" th:text="${topic.title}">标题</a></td>
             <td th:text="${topic.authorName}">作者</td>
-            <td th:text="${#dates.format(topic.time, 'yyyy-MM-dd')}">时间</td>
+            <td th:text="${#dates.format(topic.time, 'yyyy-MM-dd HH-mm-ss')}">时间</td>
         </tr>
     </table>
 </body>

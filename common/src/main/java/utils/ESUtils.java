@@ -18,7 +18,6 @@ import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,11 +30,11 @@ public class ESUtils {
                     .addTransportAddress(new TransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
             // 集群则将新的节点的信息添加到对象中
             // 如果节点名字不是默认的名字，则手动设置
-            Settings settings = Settings.builder()
-                    .put("cluster.name", "myClusterName").build();
+//            Settings settings = Settings.builder()
+//                    .put("cluster.name", "myClusterName").build();
             //TransportClient client = new PreBuiltTransportClient(settings);
             System.out.println("连接es服务成功");
-        } catch (UnknownHostException e) {
+        } catch (Exception e) {
             System.out.println("连接es服务失败");
             e.printStackTrace();
         }

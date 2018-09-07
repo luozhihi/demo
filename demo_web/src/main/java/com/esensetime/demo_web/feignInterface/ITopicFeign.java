@@ -18,4 +18,5 @@ public interface ITopicFeign {
 
     @RequestMapping("queryAll")
     List<Topic> queryAll();
+
 }
